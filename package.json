@@ -1,5 +1,5 @@
 {
-  "name": "echo-socketiov4",
+  "name": "echo-socketio-v4",
   "version": "0.0.1",
   "description": "Laravel Echo Node JS Server for Socket.io version 4",
   "repository": {
