@@ -18,7 +18,7 @@ official docs: <https://laravel.com/docs/master/broadcasting>
 Install npm package globally with the following command:
 
 ``` shell
-$   npm install -g laravel-echo-server
+$   npm install -g echo-socketiov4
 ```
 
 ### Initialize with CLI Tool
@@ -185,6 +185,23 @@ POST http://app.dev:6001/apps/your-app-id/events?auth_key=skti68i...
 **name** - A string that represents the event key within your app.
 **data** - Data you would like to broadcast to channel.
 **socket_id (optional)** - The socket id of the user that initiated the event. When present, the server will only "broadcast to others".
+
+### Laravel Echo
+
+The HTTP subscriber is compatible with the Laravel Pusher subscriber. Just configure the host and port for your Socket.IO server and set the app id and key in config/broadcasting.php. Secret is not required.
+
+```javascript
+    import Echo from 'laravel-echo';
+
+    window.io = require('socket.io-client');
+
+    window.Echo = new Echo({
+        broadcaster: 'socket.io',
+        host: window.location.hostname + ':6001'
+        broadcaster: 'socket.io',
+        transports: ['websocket', 'polling', 'flashsocket'] // Fix CORS error!
+    });
+```
 
 ### Pusher
 
