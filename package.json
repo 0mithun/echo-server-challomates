@@ -4,7 +4,7 @@
   "description": "Laravel Echo Node JS Server for Socket.io version 4",
   "repository": {
     "type": "git",
-    "url": "https://github.com/0mithun/echo-socketiov4"
+    "url": "https://github.com/0mithun/echo-socketio-v4"
   },
   "main": "dist/index.js",
   "keywords": [

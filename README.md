@@ -18,7 +18,7 @@ official docs: <https://laravel.com/docs/master/broadcasting>
 Install npm package globally with the following command:
 
 ``` shell
-$   npm install -g echo-socketiov4
+$   npm install -g echo-socketio-v4
 ```
 
 ### Initialize with CLI Tool
