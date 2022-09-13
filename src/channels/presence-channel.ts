@@ -53,19 +53,24 @@ export class PresenceChannel {
      */
     removeInactive(channel: string, members: any[], member: any): Promise<any> {
         return new Promise((resolve, reject) => {
-            this.io
+            // this.io
+            //     .of("/")
+            //     .in(channel)
+            //     .clients((error, clients) => {
+            //         members = members || [];
+            //         members = members.filter((member) => {
+            //             return clients.indexOf(member.socketId) >= 0;
+            //         });
+
+            //         this.db.set(channel + ":members", members);
+
+            //         resolve(members);
+            //     })
+            //     console.log('okkkkkkkk')
+
+                this.io
                 .of("/")
                 .in(channel)
-                // .clients((error, clients) => {
-                //     members = members || [];
-                //     members = members.filter((member) => {
-                //         return clients.indexOf(member.socketId) >= 0;
-                //     });
-
-                //     this.db.set(channel + ":members", members);
-
-                //     resolve(members);
-                // })
                 .allSockets((error, clients) => {
                     members = members || [];
                     members = members.filter((member) => {
