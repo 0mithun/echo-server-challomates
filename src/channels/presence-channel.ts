@@ -56,7 +56,17 @@ export class PresenceChannel {
             this.io
                 .of("/")
                 .in(channel)
-                .clients((error, clients) => {
+                // .clients((error, clients) => {
+                //     members = members || [];
+                //     members = members.filter((member) => {
+                //         return clients.indexOf(member.socketId) >= 0;
+                //     });
+
+                //     this.db.set(channel + ":members", members);
+
+                //     resolve(members);
+                // })
+                .allSockets((error, clients) => {
                     members = members || [];
                     members = members.filter((member) => {
                         return clients.indexOf(member.socketId) >= 0;
@@ -65,7 +75,8 @@ export class PresenceChannel {
                     this.db.set(channel + ":members", members);
 
                     resolve(members);
-                });
+                })
+                ;
         });
     }
 
