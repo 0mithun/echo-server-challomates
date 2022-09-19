@@ -249,6 +249,10 @@ export class EchoServer {
      */
     onClientEvent(socket: any): void {
         socket.on('client event', data => {
+            if(data.event_name && data.event_name == 'streaming'){
+                console.log(data.data)
+                console.log('event from streaming');
+            }
             this.channel.clientEvent(socket, data);
         });
     }

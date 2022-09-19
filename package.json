@@ -1,7 +1,7 @@
 {
-  "name": "echo-socketio-v4",
+  "name": "echo-socketio-v4-challomates",
   "version": "v2.0.3",
-  "description": "Laravel Echo Node JS Server for Socket.io version 4",
+  "description": "Laravel Echo Node JS Server for challomates.com",
   "repository": {
     "type": "git",
     "url": "https://github.com/0mithun/echo-socketio-v4"
@@ -19,7 +19,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "server": "bin/server.js"
   },
   "dependencies": {
     "colors": "1.4.0",
@@ -39,8 +40,5 @@
   },
   "peerDependecies": {
     "sqlite3": "^3.1.13"
-  },
-  "bin": {
-    "laravel-echo-server": "bin/server.js"
   }
 }
